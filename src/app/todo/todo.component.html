@@ -1,0 +1,19 @@
+<div>
+    <p> Add a task ...</p>
+    <input style="border-radius: 7px;" [(ngModel)]="name" type="string">
+    <button class="btn" (click)="saveTask()"> ADD </button>
+</div>
+
+<div *ngIf="lTodos.length">
+    <h3>List of Tasks </h3>
+    <div *ngFor="let task of lTodos; index as i">
+        <table>
+            <tr>
+                <td>{{i+1}}.</td>
+                <td>{{task.name}} </td>
+                <td><button class="btn" (click)="deleteTask(task.id)">Delete</button></td>
+
+            </tr>
+        </table>
+    </div>
+</div>
